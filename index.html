@@ -1,10 +1,145 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Calcula tu Índice de Masa de Corporal</title>
-  </head>
-  <body>
+<html lang="es" ng-app="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Calcula tu Índice de Masa de Corporal</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">IMC</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#IniciarSesion">Inicia Sesión</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#IniciarSesion">Inicia Sesión</a></li>
+        <li><a href="#Registrarse">Registrate</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Calcula tu índice de masa corporal</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Solo tienes que registrarte para calcular tu masa corporal</h5>
+        </div>
+        <div class="row center">
+          <a href="#Registrarse" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Registrate</a>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img src="/img/background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row" id="Registrarse">
+          <div class="icon-block center">
+            <h2 class="brown-text"><i class="material-icons">group</i></h2>
+            <h5 >Registrate</h5>
+            <p class="light">Para poder utilizar la calculadora por favor ingresa los siguientes datos.</p>
+            <div class="input-field">
+              <input id="email" type="email" class="validate">
+              <label for="email">Correo Electronico</label>
+            </div>
+            <div class="input-field">
+              <input type="password" name="txContra1"  type="password" class="validate">
+              <label for="txContra1">Contraseña</label>
+            </div>
+            <div class="input-field">
+              <input type="password" id="txContra2"  type="password" class="validate">
+              <label for="txContra2">Repite tu contraseña</label>
+            </div>
+            <button class="btn-large waves-effect waves-light" type="submit" name="action">Enviar
+               <i class="material-icons">send</i>
+             </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src="/img/background2.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container" >
+    <div class="section">
+
+      <div class="row" id="IniciarSesion">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Inicia Sesión</h4>
+          <p class="left-align light">Para ver tus datos o cambiar tu medición entra con tus datos.</p>
+          <div class="input-field">
+            <input id="txInicioEmail" type="email" class="validate">
+            <label for="txInicioEmail">Correo Electronico</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="txInicioContra" type="password" class="validate">
+            <label for="txInicioContra">Contraseña</label>
+          </div>
+          <button class="btn-large waves-effect waves-light" type="submit" name="action">Entrar
+             <i class="material-icons">send</i>
+           </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src="/img/background3.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Acerca de mi</h5>
+          <p class="grey-text text-lighten-4">Co-Fundador de IcEBlue, Emprendedor, Programador en C#-Java-PHP-Django-NodeJS-Javascript-iOS, Ingeniero en Sistemas Computacionales, Geek, Youtuber, Blogger.
+Me gusta mucho hablar sobre nuevas tecnologías y también escribir sobre ello, nunca dejo de aprender y me gusta estar al tanto de la vanguardia en gadgets.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Mis Redes</h5>
+          <ul>
+            <li><a class="white-text" href="https://twitter.com/einarenrique">Twitter</a></li>
+            <li><a class="white-text" href="https://www.youtube.com/einarenrique">Youtube</a></li>
+            <li><a class="white-text" href="https://github.com/einarenrique">GitHub</a></li>
+            <li><a class="white-text" href="https://www.linkedin.com/in/einarenrique">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Hecho por <a class="brown-text text-lighten-3" href="http://einargeek.icebluetab.org">Einar Enrique</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/js/materialize.min.js"></script>
+  <script src="/js/init.js"></script>
 
   </body>
 </html>
