@@ -4,19 +4,18 @@ class Funciones {
     //Funcion para conectarse a uno de los 2 servidores de MySQL
     public function conectarse()
     {
-      $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-      $server = $url["host"];
-      $username = $url["user"];
-      $password = $url["pass"];
-      $db = substr($url["path"], 1);
     //SE ESTABLECE LA CONEXION CON EL SERVIDOR MYSQL, SE MANDA COMO PARAMETROS EL NOMBRE DEL SERVIDOR
     // EL NOMBRE DE USUARIO Y LA CONTRASEÑA
         error_reporting(0);
         $serv1 = fsockopen("127.0.0.1", 80, $errno, $errstr, 1);
         try{
             if(!$serv1){
-                  $link = new mysqli($server, $username, $password, $db);
+                  $link=mysql_connect("us-cdbr-iron-east-02.cleardb.net","b884bc44b673ed","5e166b98");
+                  if (!mysql_select_db("heroku_b959f0e1de9d3a7",$link))
+                  {
+                      echo "Error seleccionando a la base de datos";
+                      exit();
+                  }
                 }
             }
             else{
