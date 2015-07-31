@@ -29,12 +29,11 @@ USE `bodymass`;
 --
 
 DROP TABLE IF EXISTS `medidas`;
-CREATE TABLE IF NOT EXISTS `medidas` (
+CREATE TABLE `medidas` (
   `Id` int(11) NOT NULL,
   `Persona` int(11) NOT NULL,
-  `Sexo` bit(1) NOT NULL,
-  `Peso` decimal(3,2) NOT NULL,
   `Altura` decimal(3,2) NOT NULL,
+  `Peso` decimal(3,2) NOT NULL,
   `BMI` decimal(2,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Medidas del usuario';
 
