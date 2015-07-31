@@ -39,6 +39,9 @@ angular.module("MiApp",[])
           Materialize.toast(data, 4000);
         }
       });
+      request.error(function(error, status, headers, config){
+        console.log(error);
+      });
     }
   }
   $scope.Login = function () {
@@ -74,6 +77,9 @@ angular.module("MiApp",[])
         else{
           Materialize.toast(data, 4000);
         }
+      });
+      request.error(function(error, status, headers, config){
+        console.log(error);
       });
     }
   }
