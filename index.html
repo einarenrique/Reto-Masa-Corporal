@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <title>Calcula tu Índice de Masa de Corporal</title>
 
-  <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body ng-controller="Controlador">
+<body ng-controller="Login">
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">IMC</a>
@@ -46,30 +45,26 @@
 
   <div class="container">
     <div class="section">
-
-      <!--   Icon Section   -->
       <div class="row" id="Registrarse">
           <div class="icon-block center">
             <h2 class="brown-text"><i class="material-icons">group</i></h2>
             <h5 >Registrate</h5>
             <p class="light">Para poder utilizar la calculadora por favor ingresa los siguientes datos.</p>
-            <form id="FormularioRegistro" name="FormularioRegistro" action="?" method="post">
-              <div class="input-field">
-                <input id="email" type="email" class="validate">
-                <label for="email" data-error="Error" data-success="Bien">Correo Electronico</label>
-              </div>
-              <div class="input-field">
-                <input type="password" name="txContra1"  type="password" class="validate">
-                <label for="txContra1">Contraseña</label>
-              </div>
-              <div class="input-field">
-                <input type="password" id="txContra2"  type="password" class="validate">
-                <label for="txContra2">Repite tu contraseña</label>
-              </div>
-              <button class="btn-large waves-effect waves-light" type="submit" name="action">Enviar
-                 <i class="material-icons">send</i>
-               </button>
-             </form>
+            <div class="input-field">
+              <input id="email" type="text" ng-model="email">
+              <label for="email">Correo Electronico</label>
+            </div>
+            <div class="input-field">
+              <input type="password" name="txContra1"  type="password" class="validate" ng-model="password">
+              <label for="txContra1">Contraseña</label>
+            </div>
+            <div class="input-field">
+              <input type="password" id="txContra2"  type="password" class="validate" ng-model="password2">
+              <label for="txContra2">Repite tu contraseña</label>
+            </div>
+            <button class="btn-large waves-effect waves-light" name="action" ng-click="Registro()">Enviar
+               <i class="material-icons">send</i>
+            </button>
           </div>
         </div>
       </div>
@@ -89,19 +84,17 @@
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>Inicia Sesión</h4>
           <p class="left-align light">Para ver tus datos o cambiar tu medición entra con tus datos.</p>
-          <form id="FormularioInicio" name="FormularioInicio" action="?" method="post">
-            <div class="input-field">
-              <input id="txInicioEmail" type="email" class="validate">
-              <label for="txInicioEmail" data-error="Error" data-success="Bien">Correo Electronico</label>
-            </div>
-            <div class="input-field">
-              <input type="password" id="txInicioContra" type="password" class="validate">
-              <label for="txInicioContra">Contraseña</label>
-            </div>
-            <button class="btn-large waves-effect waves-light" type="submit" name="action">Entrar
-               <i class="material-icons">send</i>
-             </button>
-           </form>
+          <div class="input-field">
+            <input id="txInicioEmail" type="text" ng-model="loginEmail">
+            <label for="txInicioEmail">Correo Electronico</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="txInicioContra" type="password" ng-model="loginPassword">
+            <label for="txInicioContra">Contraseña</label>
+          </div>
+          <button class="btn-large waves-effect waves-light" ng-click="Login()" name="action">Entrar
+             <i class="material-icons">send</i>
+          </button>
         </div>
       </div>
 
@@ -138,20 +131,10 @@ Me gusta mucho hablar sobre nuevas tecnologías y también escribir sobre ello, 
       </div>
     </div>
   </footer>
-
-
-  <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/js/materialize.min.js"></script>
   <script src="/js/init.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-  <script src="/js/controlador.js"></script>
-  <script type="text/javascript" src="../assets/js/jquery.validate.min.js"></script>
-  <script type="text/javascript" src="../assets/js/messages_es.js"></script>
-  <script>
-      $(document).ready(function() {
-         $("#FormularioRegistro").validate();
-      });
-   </script>
+  <script src="/js/controladorlogin.js"></script>
   </body>
 </html>
