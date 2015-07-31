@@ -14,13 +14,13 @@ class Funciones {
                   echo "Error seleccionando a la base de datos";
                   exit();
               }
-            }
+
         }catch(mysqli_sql_exception $e) {
     }
     //SELECCIONA UNA BASE DE DATOS Y REGRESA UN VALOR DE VERDADERO SI LOGRA USARLO
 
     return $link;
-    }
+  }
 
     //Para modificar y crear nuevos registros
     public function ejecutar($sql,$conexion){
