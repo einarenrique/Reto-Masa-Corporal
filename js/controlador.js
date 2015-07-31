@@ -1,7 +1,21 @@
 angular.module("MiApp",[])
 .controller("Controlador", function($scope, $http){
-  //window.alert("Debe iniciar sesión primero");
-  //location.href="/index.html#IniciarSesion";
+
+  var request = $http({
+    method: "post",
+    url: "/sesion.php",
+    data: {},
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+  });
+  request.success(function (data) {
+    if(data == "No"){
+      window.alert("Debe iniciar sesión primero");
+      location.href="/index.html#IniciarSesion";
+    }
+  });
+
+
+
   $scope.peso = "";
   $scope.altura = "";
   $scope.resultado = "";
@@ -88,8 +102,8 @@ angular.module("MiApp",[])
     });
     request.success(function (data) {
       if(data == "Ok"){
-        Materialize.toast('Cerro sesión', 1000);
-        setTimeout(function(){location.href="/";}, 1000);
+        Materialize.toast('Cerro sesión', 800);
+        setTimeout(function(){location.href="/";}, 800);
       }
       else{
         Materialize.toast("Error", 4000);
