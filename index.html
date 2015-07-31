@@ -32,7 +32,7 @@
         <br><br>
         <h1 class="header center teal-text text-lighten-2">Calcula tu índice de masa corporal</h1>
         <div class="row center">
-          <h5 class="header col s12 light">Solo tienes que registrarte para calcular tu masa corporal</h5>
+          <h5 class="header col s12">Solo tienes que registrarte para calcular tu masa corporal</h5>
         </div>
         <div class="row center">
           <a href="#Registrarse" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Registrate</a>
@@ -40,7 +40,7 @@
         <br><br>
       </div>
     </div>
-    <div class="parallax"><img src="/img/background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/img/Web1.jpg" alt="fondo de web"></div>
   </div>
 
 
@@ -53,21 +53,23 @@
             <h2 class="brown-text"><i class="material-icons">group</i></h2>
             <h5 >Registrate</h5>
             <p class="light">Para poder utilizar la calculadora por favor ingresa los siguientes datos.</p>
-            <div class="input-field">
-              <input id="email" type="email" class="validate">
-              <label for="email" data-error="Error" data-success="Bien">Correo Electronico</label>
-            </div>
-            <div class="input-field">
-              <input type="password" name="txContra1"  type="password" class="validate">
-              <label for="txContra1">Contraseña</label>
-            </div>
-            <div class="input-field">
-              <input type="password" id="txContra2"  type="password" class="validate">
-              <label for="txContra2">Repite tu contraseña</label>
-            </div>
-            <button class="btn-large waves-effect waves-light" type="submit" name="action">Enviar
-               <i class="material-icons">send</i>
-             </button>
+            <form id="FormularioRegistro" name="FormularioRegistro" action="?" method="post">
+              <div class="input-field">
+                <input id="email" type="email" class="validate">
+                <label for="email" data-error="Error" data-success="Bien">Correo Electronico</label>
+              </div>
+              <div class="input-field">
+                <input type="password" name="txContra1"  type="password" class="validate">
+                <label for="txContra1">Contraseña</label>
+              </div>
+              <div class="input-field">
+                <input type="password" id="txContra2"  type="password" class="validate">
+                <label for="txContra2">Repite tu contraseña</label>
+              </div>
+              <button class="btn-large waves-effect waves-light" type="submit" name="action">Enviar
+                 <i class="material-icons">send</i>
+               </button>
+             </form>
           </div>
         </div>
       </div>
@@ -76,7 +78,7 @@
   </div>
 
   <div class="parallax-container valign-wrapper">
-    <div class="parallax"><img src="/img/background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="/img/Web2.jpg" alt="Imagen de fondo"></div>
   </div>
 
   <div class="container" >
@@ -87,17 +89,19 @@
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>Inicia Sesión</h4>
           <p class="left-align light">Para ver tus datos o cambiar tu medición entra con tus datos.</p>
-          <div class="input-field">
-            <input id="txInicioEmail" type="email" class="validate">
-            <label for="txInicioEmail" data-error="Error" data-success="Bien">Correo Electronico</label>
-          </div>
-          <div class="input-field">
-            <input type="password" id="txInicioContra" type="password" class="validate">
-            <label for="txInicioContra">Contraseña</label>
-          </div>
-          <button class="btn-large waves-effect waves-light" type="submit" name="action">Entrar
-             <i class="material-icons">send</i>
-           </button>
+          <form id="FormularioInicio" name="FormularioInicio" action="?" method="post">
+            <div class="input-field">
+              <input id="txInicioEmail" type="email" class="validate">
+              <label for="txInicioEmail" data-error="Error" data-success="Bien">Correo Electronico</label>
+            </div>
+            <div class="input-field">
+              <input type="password" id="txInicioContra" type="password" class="validate">
+              <label for="txInicioContra">Contraseña</label>
+            </div>
+            <button class="btn-large waves-effect waves-light" type="submit" name="action">Entrar
+               <i class="material-icons">send</i>
+             </button>
+           </form>
         </div>
       </div>
 
@@ -106,7 +110,7 @@
 
 
   <div class="parallax-container valign-wrapper">
-    <div class="parallax"><img src="/img/background3.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="/img/Web3.jpg" alt="Imagen de fondo"></div>
   </div>
 
   <footer class="page-footer teal">
@@ -142,5 +146,12 @@ Me gusta mucho hablar sobre nuevas tecnologías y también escribir sobre ello, 
   <script src="/js/init.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
   <script src="/js/controlador.js"></script>
+  <script type="text/javascript" src="../assets/js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="../assets/js/messages_es.js"></script>
+  <script>
+      $(document).ready(function() {
+         $("#FormularioRegistro").validate();
+      });
+   </script>
   </body>
 </html>
