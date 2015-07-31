@@ -78,4 +78,22 @@ angular.module("MiApp",[])
       }
     }
   }
+  $scope.LogOut = function()
+  {
+    var request = $http({
+      method: "post",
+      url: "/logout.php",
+      data: {},
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    });
+    request.success(function (data) {
+      if(data == "Ok"){
+        Materialize.toast('Cerro sesión', 1000);
+        setTimeout(function(){location.href="/";}, 1000);
+      }
+      else{
+        Materialize.toast("Error", 4000);
+      }
+    });
+  }
 });
