@@ -7,25 +7,13 @@ class Funciones {
     //SE ESTABLECE LA CONEXION CON EL SERVIDOR MYSQL, SE MANDA COMO PARAMETROS EL NOMBRE DEL SERVIDOR
     // EL NOMBRE DE USUARIO Y LA CONTRASEÑA
         error_reporting(0);
-        $serv1 = fsockopen("127.0.0.1", 80, $errno, $errstr, 1);
         try{
-            if(!$serv1){
-                  $link=mysql_connect("us-cdbr-iron-east-02.cleardb.net","b884bc44b673ed","5e166b98");
-                  if (!mysql_select_db("heroku_b959f0e1de9d3a7",$link))
-                  {
-                      echo "Error seleccionando a la base de datos";
-                      exit();
-                  }
-                }
-            }
-            else{
-                $link=mysql_connect("localhost","root","root");
-                if (!mysql_select_db("bodymass",$link))
-                {
-                    echo "Error seleccionando a la base de datos";
-                    exit();
-                }
-                fclose($serv1);
+              $link=mysql_connect("us-cdbr-iron-east-02.cleardb.net","b884bc44b673ed","5e166b98");
+              if (!mysql_select_db("heroku_b959f0e1de9d3a7", $link))
+              {
+                  echo "Error seleccionando a la base de datos";
+                  exit();
+              }
             }
         }catch(mysqli_sql_exception $e) {
     }
