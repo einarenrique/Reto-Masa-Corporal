@@ -10,11 +10,12 @@ class Funciones {
               $link=mysql_connect("us-cdbr-iron-east-02.cleardb.net","b884bc44b673ed","5e166b98");
               if (!mysql_select_db("heroku_b959f0e1de9d3a7", $link))
               {
-                  echo "Error seleccionando a la base de datos";
+                  echo "alert('Error seleccionando a la base de datos');";
                   exit();
               }
 
         }catch(mysqli_sql_exception $e) {
+          echo "alert('No se pudo conectar');";
     }
     //SELECCIONA UNA BASE DE DATOS Y REGRESA UN VALOR DE VERDADERO SI LOGRA USARLO
 
