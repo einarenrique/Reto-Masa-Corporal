@@ -16,7 +16,7 @@ if(($email != "")&&($pass != "")){;
     printf("Ok");
   }
   else
-  printf("Error");
+  printf("No existe el usuario o la contraseña es incorrecta.");
 }
 else{
   printf("Error");
