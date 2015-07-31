@@ -23,7 +23,7 @@ angular.module("MiApp",[])
       var request = $http({
         method: "post",
         //url: window.location.host + "NuevoUsuario.php",
-        url: "/NuevoUsuario.php",
+        url: "./NuevoUsuario.php",
         data: {
           email: $scope.email,
           pass: $scope.password
@@ -62,7 +62,7 @@ angular.module("MiApp",[])
       var request = $http({
         method: "post",
         //url: window.location.host + "login.php",
-        url: "/login.php",
+        url: "./login.php",
         data: {
           email: $scope.loginEmail,
           pass: $scope.loginPassword
