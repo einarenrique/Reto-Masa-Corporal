@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="">
+<html lang="es" ng-app="MiApp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -10,7 +10,7 @@
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
+<body ng-controller="Controlador">
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">IMC</a>
@@ -55,7 +55,7 @@
             <p class="light">Para poder utilizar la calculadora por favor ingresa los siguientes datos.</p>
             <div class="input-field">
               <input id="email" type="email" class="validate">
-              <label for="email">Correo Electronico</label>
+              <label for="email" data-error="Error" data-success="Bien">Correo Electronico</label>
             </div>
             <div class="input-field">
               <input type="password" name="txContra1"  type="password" class="validate">
@@ -89,7 +89,7 @@
           <p class="left-align light">Para ver tus datos o cambiar tu medición entra con tus datos.</p>
           <div class="input-field">
             <input id="txInicioEmail" type="email" class="validate">
-            <label for="txInicioEmail">Correo Electronico</label>
+            <label for="txInicioEmail" data-error="Error" data-success="Bien">Correo Electronico</label>
           </div>
           <div class="input-field">
             <input type="password" id="txInicioContra" type="password" class="validate">
@@ -140,6 +140,7 @@ Me gusta mucho hablar sobre nuevas tecnologías y también escribir sobre ello, 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/js/materialize.min.js"></script>
   <script src="/js/init.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+  <script src="/js/controlador.js"></script>
   </body>
 </html>
