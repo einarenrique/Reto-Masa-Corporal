@@ -1,6 +1,5 @@
 <?php
 class Funciones {
-  printf("Prueba");
     //Funcion para conectarse a uno de los 2 servidores de MySQL
     public function conectarse()
     {

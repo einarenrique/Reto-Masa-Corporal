@@ -1,6 +1,6 @@
 <?php
-session_start();
-include ("/fung33ker.php");
+
+include ("./fung33ker.php");
 printf("1");
 $funcion=new Funciones();
 printf("2");
