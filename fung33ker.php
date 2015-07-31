@@ -4,18 +4,24 @@ class Funciones {
     //Funcion para conectarse a uno de los 2 servidores de MySQL
     public function conectarse()
     {
+      $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+      $server = $url["host"];
+      $username = $url["user"];
+      $password = $url["pass"];
+      $db = substr($url["path"], 1);
     //SE ESTABLECE LA CONEXION CON EL SERVIDOR MYSQL, SE MANDA COMO PARAMETROS EL NOMBRE DEL SERVIDOR
     // EL NOMBRE DE USUARIO Y LA CONTRASEÑA
         error_reporting(0);
         $serv1 = fsockopen("127.0.0.1", 80, $errno, $errstr, 1);
-
+        $serv2 = fsockopen($server, 80, $errno, $errstr, 1);
         try{
             if(!$serv1){
                 if(!$serv2){
                     echo "Los servidores de base de datos se encuentran caidos<br>";
                 }
                 else{
-                    $link=mysql_connect("localhost","root","1");
+                    $link=mysql_connect($server, $username, $password);
                     fclose($serv2);
                 }
             }
@@ -28,8 +34,10 @@ class Funciones {
     //SELECCIONA UNA BASE DE DATOS Y REGRESA UN VALOR DE VERDADERO SI LOGRA USARLO
     if (!mysql_select_db("bodymass",$link))
     {
+      if(!mysql_select_db($db,$link)){}
         echo "Error seleccionando a la base de datos";
         exit();
+      }
     }
     return $link;
     }
