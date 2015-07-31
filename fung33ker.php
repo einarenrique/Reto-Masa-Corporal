@@ -14,31 +14,24 @@ class Funciones {
     // EL NOMBRE DE USUARIO Y LA CONTRASEÑA
         error_reporting(0);
         $serv1 = fsockopen("127.0.0.1", 80, $errno, $errstr, 1);
-        $serv2 = fsockopen($server, 80, $errno, $errstr, 1);
         try{
             if(!$serv1){
-                if(!$serv2){
-                    echo "Los servidores de base de datos se encuentran caidos<br>";
-                }
-                else{
-                    $link=mysql_connect($server, $username, $password);
-                    fclose($serv2);
+                  $link = new mysqli($server, $username, $password, $db);
                 }
             }
             else{
                 $link=mysql_connect("localhost","root","root");
+                if (!mysql_select_db("bodymass",$link))
+                {
+                    echo "Error seleccionando a la base de datos";
+                    exit();
+                }
                 fclose($serv1);
             }
         }catch(mysqli_sql_exception $e) {
     }
     //SELECCIONA UNA BASE DE DATOS Y REGRESA UN VALOR DE VERDADERO SI LOGRA USARLO
-    if (!mysql_select_db("bodymass",$link))
-    {
-      if(!mysql_select_db($db,$link)){}
-        echo "Error seleccionando a la base de datos";
-        exit();
-      }
-    }
+
     return $link;
     }
 
