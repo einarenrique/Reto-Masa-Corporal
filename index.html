@@ -51,8 +51,8 @@
             <h5 >Registrate</h5>
             <p class="light">Para poder utilizar la calculadora por favor ingresa los siguientes datos.</p>
             <div class="input-field">
-              <input id="email" type="text" ng-model="email">
-              <label for="email">Correo Electronico</label>
+              <input id="email" type="text" ng-model="email"  autocorrect="off" autocapitalize="off">
+              <label for="email"">Correo Electronico</label>
             </div>
             <div class="input-field">
               <input type="password" name="txContra1"  type="password" class="validate" ng-model="password">
@@ -85,7 +85,7 @@
           <h4>Inicia Sesión</h4>
           <p class="left-align light">Para ver tus datos o cambiar tu medición entra con tus datos.</p>
           <div class="input-field">
-            <input id="txInicioEmail" type="text" ng-model="loginEmail">
+            <input id="txInicioEmail" type="text" ng-model="loginEmail"  autocorrect="off" autocapitalize="off">
             <label for="txInicioEmail">Correo Electronico</label>
           </div>
           <div class="input-field">

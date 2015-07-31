@@ -33,7 +33,7 @@ angular.module("MiApp",[])
       request.success(function (data) {
         if(data == "Ok"){
           Materialize.toast('Creo el usuario '+$scope.email, 1500);
-          setTimeout(function(){ alert(location.href="/calcular.html"); }, 1500);
+          setTimeout(function(){location.href="/calcular.html";}, 1500);
         }
         else{
           Materialize.toast(data, 4000);
@@ -69,7 +69,7 @@ angular.module("MiApp",[])
       request.success(function (data) {
         if(data == "Ok"){
           Materialize.toast('Inicio sesión como '+$scope.loginEmail, 1500);
-          setTimeout(function(){ alert(location.href="/calcular.html"); }, 1500);
+          setTimeout(function(){location.href="/calcular.html";}, 1500);
         }
         else{
           Materialize.toast(data, 4000);

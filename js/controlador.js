@@ -1,7 +1,7 @@
 angular.module("MiApp",[])
 .controller("Controlador", function($scope, $http){
-  window.alert("Debe iniciar sesión primero");
-  location.href="/index.html#IniciarSesion";
+  //window.alert("Debe iniciar sesión primero");
+  //location.href="/index.html#IniciarSesion";
   $scope.peso = "";
   $scope.altura = "";
   $scope.resultado = "";
