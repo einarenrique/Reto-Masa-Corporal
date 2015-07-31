@@ -37,29 +37,29 @@ angular.module("MiApp",[])
       				$scope.IMC = $scope.peso/alturaCuadrado;
       				$scope.IMC = Math.round($scope.IMC*100)/100;
       				/*CALCULO DESCRIPCION IMC*/
-      				if($scope.IMC<16){
+      				if($scope.IMC<15){
       					$scope.resultado = "Delgadez Severa";
       				}
       				else if($scope.IMC<17){
       					$scope.resultado = "Delgadez Moderada";
       				}
-      				else if($scope.IMC<18.5){
+      				else if($scope.IMC<18.6){
       					$scope.resultado = "Delgadez Aceptable";
       				}
-      				else if($scope.IMC<25){
-      					$scope.resultado = "Peso Normal";
+      				else if($scope.IMC<26){
+      					$scope.resultado = "Peso Normal (saludable)";
       				}
-      				else if($scope.IMC<30){
+      				else if($scope.IMC<31){
       					$scope.resultado = "Sobrepeso";
       				}
-      				else if($scope.IMC<35){
-      					$scope.resultado = "Obeso: Tipo I";
+      				else if($scope.IMC<36){
+      					$scope.resultado = "Obeso: Tipo I (moderadamente obeso)";
       				}
-      				else if($scope.IMC<40){
-      					$scope.resultado = "Obeso: Tipo II";
+      				else if($scope.IMC<41){
+      					$scope.resultado = "Obeso: Tipo II (severamente obeso)";
       				}
-      				else if($scope.IMC>=40){
-      					$scope.resultado = "Obeso: Tipo III";
+      				else if($scope.IMC>=41){
+      					$scope.resultado = "Obeso: Tipo III (muy severamente obeso)";
       				}
       			}
       	}
