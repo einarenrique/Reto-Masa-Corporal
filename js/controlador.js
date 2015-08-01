@@ -34,9 +34,11 @@ angular.module("MiApp",[])
     $scope.IMC = "";
     if($scope.altura == ""){
       Materialize.toast('Por favor, introduce tu altura.', 4000);
+      document.getElementById("txAltura").focus();
     }
     else if(isNaN($scope.altura)){
       Materialize.toast('Debe introducir un número en su altura', 4000);
+      document.getElementById("txAltura").focus();
     }
     else
     {
@@ -44,25 +46,32 @@ angular.module("MiApp",[])
       var alturaMetro=$scope.altura/100;
       if($scope.altura < 0){
         Materialize.toast('La altura que introduzca debe ser positiva.', 4000);
+        document.getElementById("txAltura").focus();
       }
       else if($scope.altura == 0){
         Materialize.toast('La altura que introduzca debe ser mayor a 0.', 4000);
+        document.getElementById("txAltura").focus();
       }
       else if($scope.altura < 3){
         Materialize.toast('Ha introducido la altura en metros. Por favor, multipliquela por 100 para introducirla en centimetros.', 4000);
+        document.getElementById("txAltura").focus();
       }
       else{
         if(isNaN($scope.peso)){
           Materialize.toast('Debe introducir un número en su peso.', 4000);
+          document.getElementById("txPeso").focus();
         }
         else if($scope.peso == ""){
           Materialize.toast('Por favor, introduce tu peso.', 4000);
+          document.getElementById("txPeso").focus();
         }
         else if($scope.peso < 0){
           Materialize.toast('El peso que introduzca debe ser positivo.', 4000);
+          document.getElementById("txPeso").focus();
         }
         else if($scope.peso == 0){
           Materialize.toast('El peso que introduzca debe ser mayor a 0.', 4000);
+          document.getElementById("txPeso").focus();
         }
         else{
           $scope.resultado = "";
@@ -113,8 +122,8 @@ angular.module("MiApp",[])
     });
     request.success(function (data) {
       if(data == "Ok"){
-        Materialize.toast('Cerro sesión', 800);
-        setTimeout(function(){location.href="/";}, 800);
+        Materialize.toast('Cerro sesión', 400);
+        setTimeout(function(){location.href="/";}, 400);
       }
       else{
         Materialize.toast("Error", 4000);
