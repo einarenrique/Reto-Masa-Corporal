@@ -105,6 +105,9 @@ angular.module("MiApp",[])
             if(data == "Ok"){
               Materialize.toast('Datos guardados', 1000);
             }
+            else if(data == "Ok2"){
+              Materialize.toast('Datos actualizados', 1000);
+            }
             else{
               Materialize.toast(data, 4000);
             }
