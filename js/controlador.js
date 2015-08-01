@@ -1,6 +1,6 @@
 angular.module("MiApp",[])
 .controller("Controlador", function($scope, $http){
-
+  $scope.Id = "";
   var request = $http({
     method: "post",
     url: "/sesion.php",
@@ -12,9 +12,10 @@ angular.module("MiApp",[])
       window.alert("Debe iniciar sesión primero");
       location.href="/index.html#IniciarSesion";
     }
+    else {
+      $scope.Id = data;
+    }
   });
-
-
 
   $scope.peso = "";
   $scope.altura = "";
@@ -88,6 +89,29 @@ angular.module("MiApp",[])
           else if($scope.IMC>=41){
             $scope.resultado = "Obeso: Tipo III (muy severamente obeso)";
           }
+
+          var request2 = $http({
+            method: "post",
+            url: "./calcular.php",
+            data: {
+              peso: $scope.peso,
+              altura: $scope.altura,
+              imc: $scope.IMC,
+              id: $scope.Id
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+          });
+          request2.success(function (data) {
+            if(data == "Ok"){
+              Materialize.toast('Datos guardados', 1000);
+            }
+            else{
+              Materialize.toast(data, 4000);
+            }
+          });
+          request2.error(function(error, status, headers, config){
+            console.log(error);
+          });
         }
       }
     }

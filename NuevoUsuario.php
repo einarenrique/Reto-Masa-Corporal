@@ -15,7 +15,10 @@ if(($email != "")&&($pass != "")){
     $sql="INSERT INTO usuarios values('','$email',AES_ENCRYPT('$pass','$email'))";
     $b = $funcion->ejecutar($sql, $conexion);
     if($b > 0){
+      $sql2 = "SELECT Id FROM usuarios WHERE User = '$email';";
+      $tabla2=$funcion->busqueda($sql2, $conexion);
       $_SESSION["user"] = $email;
+      $_SESSION["id"] = $tabla2[0];
       printf("Ok");
     }
     else printf("Error al agregar a la base de datos.");

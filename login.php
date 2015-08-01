@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ("fung33ker.php");
+include ("./fung33ker.php");
 $funcion=new Funciones();
 $conexion=$funcion->conectarse();
 
@@ -9,10 +9,11 @@ $request = json_decode($postdata);
 @$email = $request->email;
 @$pass = $request->pass;
 if(($email != "")&&($pass != "")){;
-  $sql = "SELECT AES_DECRYPT (Password,'$email') FROM usuarios WHERE User = '$email';";
+  $sql = "SELECT AES_DECRYPT (Password,'$email'), Id FROM usuarios WHERE User = '$email';";
   $tabla=$funcion->busqueda($sql, $conexion);
   if($tabla[0]==$pass){
     $_SESSION["user"] = $email;
+    $_SESSION["id"] = $tabla[1];
     printf("Ok");
   }
   else
