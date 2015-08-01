@@ -27,7 +27,7 @@ if(($peso != "")&&($altura != "")&&($imc != "")&& ($id != "")){
     if($b > 0){
       printf("Ok2");
     }
-    else printf("Error al agregar a la base de datos. $sql");
+    else printf("Error al agregar a la base de datos.");
   }
 }
 else{
