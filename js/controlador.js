@@ -1,6 +1,10 @@
 angular.module("MiApp",[])
 .controller("Controlador", function($scope, $http){
   $scope.Id = "";
+  $scope.altura = "";
+  $scope.peso = "";
+  $scope.IMC = "";
+  $scope.resultado = "";
   var request = $http({
     method: "post",
     url: "/sesion.php",
@@ -13,14 +17,17 @@ angular.module("MiApp",[])
       location.href="/index.html#IniciarSesion";
     }
     else {
-      $scope.Id = data;
+      arreglo = data.split('|');
+      $scope.Id = arreglo[0];
+      if(arreglo.length > 1){
+        $scope.altura = arreglo[1];
+        $scope.peso = arreglo[2];
+        $scope.IMC = arreglo[3];
+        $scope.TextoIMC();
+      }
     }
   });
 
-  $scope.peso = "";
-  $scope.altura = "";
-  $scope.resultado = "";
-  $scope.IMC = "";
   $scope.calcular = function()
   {
     $scope.resultado = "";
@@ -64,31 +71,8 @@ angular.module("MiApp",[])
           var alturaCuadrado=alturaMetro*alturaMetro;
           $scope.IMC = $scope.peso/alturaCuadrado;
           $scope.IMC = Math.round($scope.IMC*100)/100;
-          /*CALCULO DESCRIPCION IMC*/
-          if($scope.IMC<15){
-            $scope.resultado = "Delgadez Severa";
-          }
-          else if($scope.IMC<17){
-            $scope.resultado = "Delgadez Moderada";
-          }
-          else if($scope.IMC<18.6){
-            $scope.resultado = "Delgadez Aceptable";
-          }
-          else if($scope.IMC<26){
-            $scope.resultado = "Peso Normal (saludable)";
-          }
-          else if($scope.IMC<31){
-            $scope.resultado = "Sobrepeso";
-          }
-          else if($scope.IMC<36){
-            $scope.resultado = "Obeso: Tipo I (moderadamente obeso)";
-          }
-          else if($scope.IMC<41){
-            $scope.resultado = "Obeso: Tipo II (severamente obeso)";
-          }
-          else if($scope.IMC>=41){
-            $scope.resultado = "Obeso: Tipo III (muy severamente obeso)";
-          }
+
+          $scope.TextoIMC();
 
           var request2 = $http({
             method: "post",
@@ -136,5 +120,33 @@ angular.module("MiApp",[])
         Materialize.toast("Error", 4000);
       }
     });
+  }
+
+  $scope.TextoIMC = function(){
+    /*CALCULO DESCRIPCION IMC*/
+    if($scope.IMC<15){
+      $scope.resultado = "Delgadez Severa";
+    }
+    else if($scope.IMC<17){
+      $scope.resultado = "Delgadez Moderada";
+    }
+    else if($scope.IMC<18.6){
+      $scope.resultado = "Delgadez Aceptable";
+    }
+    else if($scope.IMC<26){
+      $scope.resultado = "Peso Normal (saludable)";
+    }
+    else if($scope.IMC<31){
+      $scope.resultado = "Sobrepeso";
+    }
+    else if($scope.IMC<36){
+      $scope.resultado = "Obeso: Tipo I (moderadamente obeso)";
+    }
+    else if($scope.IMC<41){
+      $scope.resultado = "Obeso: Tipo II (severamente obeso)";
+    }
+    else if($scope.IMC>=41){
+      $scope.resultado = "Obeso: Tipo III (muy severamente obeso)";
+    }
   }
 });
