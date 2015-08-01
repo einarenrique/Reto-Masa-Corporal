@@ -1,33 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.4.12
--- http://www.phpmyadmin.net
---
--- Servidor: localhost:8889
--- Tiempo de generación: 30-07-2015 a las 23:39:59
--- Versión del servidor: 5.5.42
--- Versión de PHP: 5.6.10
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `bodymass`
---
-CREATE DATABASE IF NOT EXISTS `bodymass` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bodymass`;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `medidas`
---
-
 DROP TABLE IF EXISTS `medidas`;
 CREATE TABLE `medidas` (
   `Id` int(11) NOT NULL,
