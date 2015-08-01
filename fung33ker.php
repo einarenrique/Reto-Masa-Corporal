@@ -19,7 +19,7 @@ class Funciones {
     public function ejecutar($sql,$conexion){
         $n=0;
         $resultado = mysqli_query($conexion, $sql);
-        $n= mysqli_num_rows($resultado);
+        $n= mysqli_affected_rows($resultado);
         return $n;
     }
 
