@@ -32,8 +32,8 @@ angular.module("MiApp",[])
       });
       request.success(function (data) {
         if(data == "Ok"){
-          Materialize.toast('Creo el usuario '+$scope.email, 1000);
-          setTimeout(function(){location.href="/calcular.html";}, 1000);
+          Materialize.toast('Creo el usuario '+$scope.email, 400);
+          setTimeout(function(){location.href="/calcular.html";}, 400);
         }
         else{
           Materialize.toast(data, 4000);
@@ -71,8 +71,8 @@ angular.module("MiApp",[])
       });
       request.success(function (data) {
         if(data == "Ok"){
-          Materialize.toast('Inicio sesión como '+$scope.loginEmail, 1000);
-          setTimeout(function(){location.href="/calcular.html";}, 1000);
+          Materialize.toast('Inicio sesión como '+$scope.loginEmail, 400);
+          setTimeout(function(){location.href="/calcular.html";}, 400);
         }
         else{
           Materialize.toast(data, 4000);
